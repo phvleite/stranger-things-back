@@ -4,8 +4,6 @@ WORKDIR /app
 
 RUN npm install
 
-RUN npm i express
-
 COPY . .
 
 CMD ["npm", "start"]
