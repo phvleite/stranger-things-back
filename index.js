@@ -17,14 +17,9 @@ const strangerThingsService = new StrangerThingsService(
 
 app.use(cors());
 
-const upsideDown = process.env.UPSIDEDOWN_MODE;
+const hereIsTheUpsideDown = process.env.UPSIDEDOWN_MODE === 'false';
 
-let hereIsTheUpsideDown;
-if (upsideDown === 'true') {
-  hereIsTheUpsideDown = true;
-} else {
-  hereIsTheUpsideDown = false;
-}
+console.log(hereIsTheUpsideDown);
 
 const port = process.env.PORT;
 
@@ -38,5 +33,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log('Escutando na porta 3000');
+  console.log(`Escutando na porta ${port}`);
 });
